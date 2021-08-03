@@ -6,7 +6,22 @@ import (
 	"reflect"
 )
 
+var a int = 32
+
+const b = iota
+const c = iota
+const (
+	d = iota + 2
+	e
+)
+
 func main() {
+
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
+	fmt.Println(d)
+	fmt.Println(e)
 	/**
 	使用make创建slice、map、chan
 	*/
@@ -26,6 +41,8 @@ func main() {
 	handleException()
 	//获取长度、容量
 	getLen()
+	//调用结构体
+	TestForDog()
 }
 
 //创建切片，相当于java中的数组
@@ -154,4 +171,29 @@ func closeChan() {
 	mChan <- 1
 	//关闭chan
 	close(mChan)
+}
+
+//定义结构体，多个数据类型的集合，类似于java中的类对象
+type Dog struct {
+	ID   int
+	Name string
+	Age  int
+}
+
+//使用结构体
+func TestForDog() {
+	//创建方式一
+	var dog Dog
+	dog.Age = 10
+	dog.ID = 1
+	dog.Name = "旺财"
+	//创建方式2
+	dog2 := Dog{ID: 1, Name: "花花", Age: 10}
+	//创建方式3，指针类型
+	dog3 := new(Dog)
+	dog3.ID = 2
+	dog3.Name = "小白"
+	dog3.Age = 10
+	fmt.Println("dog2的结构体为：", dog2)
+	fmt.Println("dog3的结构体为：", dog3)
 }
