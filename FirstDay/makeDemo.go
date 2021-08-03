@@ -24,6 +24,8 @@ func main() {
 
 	//调用异常
 	handleException()
+	//获取长度、容量
+	getLen()
 }
 
 //创建切片，相当于java中的数组
@@ -124,4 +126,32 @@ func coverPanic() {
 
 	}
 
+}
+
+/**
+测试长度和容量
+*/
+func getLen() {
+	//第三个参数为容量大小，初始化容量，如果容量不够，会自动扩充
+	sliceSource := make([]string, 2, 5)
+	sliceSource[0] = "位置1"
+	sliceSource[1] = "位置2"
+	//赋值报错，超出长度范围
+	//sliceSource[2]="位置3"
+	//但是可以使用append的方法追加元素
+	sliceSource = append(sliceSource, "位置3")
+	fmt.Println("sliceSource的长度为：", len(sliceSource))
+	fmt.Println("sliceSource的容量为：", cap(sliceSource))
+}
+
+/**
+测试关闭chan
+*/
+func closeChan() {
+	//创建chan
+	mChan := make(chan int, 1)
+	//往chan里面填充数据
+	mChan <- 1
+	//关闭chan
+	close(mChan)
 }
