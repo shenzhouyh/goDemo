@@ -43,6 +43,7 @@ func main() {
 	getLen()
 	//调用结构体
 	TestForDog()
+	Hello()
 }
 
 //创建切片，相当于java中的数组
@@ -194,6 +195,7 @@ func TestForDog() {
 	dog3.ID = 2
 	dog3.Name = "小白"
 	dog3.Age = 10
+	fmt.Println("dog的结构体为：", dog)
 	fmt.Println("dog2的结构体为：", dog2)
 	fmt.Println("dog3的结构体为：", dog3)
 }
