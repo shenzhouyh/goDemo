@@ -3,7 +3,7 @@ package lib1
 import "fmt"
 
 func LibTest() {
-	fmt.Print("lib1Test()")
+	fmt.Println("lib1Test()")
 }
 
 func init() {
