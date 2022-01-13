@@ -27,6 +27,10 @@ func main() {
 		//在printArrayAndChange中更改了myarray中的值，原始的myarray并没有受到影响，所以，对应的也不是同一个数组信息
 		fmt.Println("index=", i, "  value=", myarray3[i])
 	}
+	//查看数组的数据类型
+	fmt.Printf("myarray1 types=%T\n", myarray1)
+	fmt.Printf("myarray2 types=%T\n", myarray2)
+	fmt.Printf("myarray3 types=%T\n", myarray3)
 }
 
 func printArrayAndChange(myarray3 [4]int) {
